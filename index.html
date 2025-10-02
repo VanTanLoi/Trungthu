@@ -71,6 +71,9 @@
   </style>
 </head>
 <body>
+  <audio id="bgm" preload="auto" loop>
+  <source src="./assets/music.mp3" type="audio/mpeg" />
+</audio>
   <div class="sky" aria-hidden="true"></div>
   <canvas id="lanterns"></canvas>
   <div class="lamp-mask" id="lampMask"></div>
@@ -79,6 +82,8 @@
   <div class="reveal" id="reveal"><div class="stage" id="stage"></div></div>
 
 <script>
+const bgm = document.getElementById('bgm');
+bgm.play().catch(()=>{ /* nếu bị chặn thì thử lại sau */ });
 const CONFIG = {
   IMAGES:[
     {type:'image',src:'./assets/image-4.jpg',alt:'Ảnh 1'},
