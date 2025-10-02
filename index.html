@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="vi">
-<head <link rel="icon" type="image/png" href="./assets/image-3">
->
+<head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>Trung Thu - Yến Nhi</title>
+<title>Trung Thu - Yến Nhi </title>
 <style>
   :root{
     --night:#0b0f1a; --overlay:#0b0f1acc;
@@ -59,14 +58,37 @@
   .stage img{max-width:var(--img-max-w);max-height:var(--img-max-h);width:auto;height:auto;display:block;border-radius:12px;box-shadow:0 10px 30px #0008;}
   .stage .text{color:#ffeab7;text-align:center;font-weight:800;letter-spacing:.02em;
     font-size:var(--text-size);line-height:var(--text-line);
-    text-shadow:0 33',alt:'Ảnh 3'},
+    text-shadow:0 3px 18px #000,0 0 30px #ffb84d55;padding:6vh 4vw;}
+  .close{position:absolute;top:8px;right:8px;z-index:10;width:var(--x-size);height:var(--x-size);
+    border-radius:10px;border:1px solid #324a7b;background:#162445;color:#ffeab7;
+    font-size:var(--x-font);font-weight:800;line-height:var(--x-size);text-align:center;cursor:pointer;
+    user-select:none;box-shadow:0 6px 18px #000a,inset 0 0 18px #ffffff22;
+    transition:transform .12s,background .2s;}
+  .close:hover{transform:translateY(-1px) scale(1.02);background:#1b2b52;}
+  .close:active{transform:translateY(0) scale(.98);}
+</style>
+</head>
+<body>
+  <div class="sky" aria-hidden="true"></div>
+  <canvas id="lanterns"></canvas>
+  <div class="lamp-mask" id="lampMask"></div>
+  <div class="vignette" id="vignette"></div>
+  <canvas id="fx"></canvas>
+  <div class="reveal" id="reveal"><div class="stage" id="stage"></div></div>
+
+<script>
+const CONFIG = {
+  IMAGES:[
+    {type:'image',src:'./assets/image-1',alt:'Ảnh 1'},
+    {type:'image',src:'./assets/image-2',alt:'Ảnh 2'},
+    {type:'image',src:'./assets/image-3',alt:'Ảnh 3'},
   ],
   TEXTS:[
     {type:'text',content:'🎉 Mùa trăng này chúc em có thật nhiều tiếng cười, nhận thật nhiều quà và giữ mãi nét duyên dáng đáng yêu.'},
     {type:'text',content:'🌕 Chúc em có một mùa Trung Thu thật ngọt ngào, rạng rỡ như ánh trăng và luôn hạnh phúc bên gia đình, bạn bè.'},
     {type:'text',content:'🍵 Trung Thu đến, chúc em luôn xinh đẹp, bình an, sự nghiệp thuận lợi và lúc nào cũng tràn đầy niềm vui.'},
   ],
-  LOOP:true, ALTERNATE:false, RESPAWN_ON_CLOSE:true,
+  LOOP:true, ALTERNATE:true, RESPAWN_ON_CLOSE:true,
   LANTERN_COUNT:36, DPR_MAX:2, CLICK_HIT_MULT:0.55, FX_BURST_MS:640
 };
 const clamp=(v,min,max)=>Math.min(max,Math.max(min,v));
