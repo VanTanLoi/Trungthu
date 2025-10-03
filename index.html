@@ -143,7 +143,7 @@ const LanternField=(function(){
       p._cx=p.x; p._cy=p.y;
 
       const radius=Math.max(8, 0.9*Math.max(p._w||0,p._h||0));
-      if(!Number.isFinite(p._cx)||!Number.isFinite(p._cy)||!Number.isFinite(radius)) continue; // tránh NaN
+      if(!Number.isFinite(p._cx)||!Number.isFinite(p._cy)||!Number.isFinite(radius)) continue; 
 
       const gx=p._cx, gy=p._cy;
       const glow=ctx.createRadialGradient(gx,gy,2,gx,gy,radius);
