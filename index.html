@@ -7,6 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Trung Thu - Yến Nhi</title>
   <style>
+     margin: 0;
+  background-image: url("assets/background.jpg"); /* ảnh trong thư mục assets */
+  background-size: cover;   /* ảnh phủ toàn màn hình */
+  background-position: center; /* canh giữa ảnh */
+  background-attachment: fixed; /* ảnh cố định khi cuộn */
     :root{
       --night:#0b0f1a; --overlay:#0b0f1acc;
       --panel:#0c1424eb; --panel-border:#2a3f6b; --panel-glow:#0b1a3a;
@@ -71,6 +76,7 @@
   </style>
 </head>
 <body>
+  
   <!-- Nhạc nền: playsinline để iOS phát trong trang; sẽ phát sau khi click trúng đèn -->
   <audio id="bgm" preload="auto" loop playsinline>
     <source src="./assets/music.mp3" type="audio/mpeg" />
